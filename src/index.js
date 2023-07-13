@@ -4,23 +4,28 @@ import SlimSelect from 'slim-select'
 import loader from "css-loader";
 
 new SlimSelect({
-  select: '#selectElement'
+  select: '#breed-select'
 })
 
 axios.defaults.headers.common["x-api-key"] = "live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn";
+axios.defaults.baseURL='https://api.thecatapi.com/v1/breeds';
 
- const select = document.querySelector('.js-breed-select');
-  const container=document.querySelector('.js-breedId-list');
-  const infoCat =document.querySelector('.js-cat-info');
-  
+export function fetchBreeds(){
+  return axios.get(`/breeds/`).then(Response=>{
+    if (Response.ok){
+      throw new Error(Response.status);
+    }
+    return (Response.status!==200);
+    });
+  }
+  export function fetchCatByBreed(breedId){
+    return axios.get(`/images/search?bread_ids=${dreedId}`).then(Response=>{
+      if (!Response.ok){
+        throw new Error(Response.status);
+      }
+      return (Response.status!==response.data);
+    })
+  }
+ 
+ 
 
-
-function fetchBreeds(){
-    const BASE_URL= 'https://api.thecatapi.com/v1/breeds';
-   const ENDPOINT=id;
-
-};
-function fetchCatByBreed(evt){
-evt.preventDefault();
-const infoCat= evt.target.value.trim();
-};
