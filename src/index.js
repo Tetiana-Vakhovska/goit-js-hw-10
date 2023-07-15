@@ -1,11 +1,16 @@
 import axios from "axios";
 import notiflix from "notiflix";
-import SlimSelect from 'slim-select'
+
 import loader from "css-loader";
 
+import SlimSelect from 'slim-select';
+
 new SlimSelect({
-  select: '#breed-select'
+  select: '#selectElement',
 })
+
+ const breed_ids=id;
+ const  baseURL = 'https://some-domain.com/api/';
 
 axios.defaults.headers.common["x-api-key"] = "live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn";
 axios.defaults.baseURL='https://api.thecatapi.com/v1/breeds';
@@ -26,6 +31,24 @@ export function fetchBreeds(){
       return (Response.status!==response.data);
     })
   }
+  axios.get('/user?ID=12345')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
  
- 
-
+axios.get('/user/12345')
+  .then(function (response) {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  });
