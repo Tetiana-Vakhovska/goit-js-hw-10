@@ -5,6 +5,7 @@ import loader from "css-loader";
 
 import SlimSelect from 'slim-select';
 
+ let allCat
 new SlimSelect({
   select: '#selectElement',
 })
