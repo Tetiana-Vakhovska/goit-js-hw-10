@@ -1,6 +1,6 @@
 
 
-function fetchBreeds(){
+ export function fetchBreeds(){
 
     const BASE_URL =' https://api.thecatapi.com/v1/breeds' ;
     const END_POINT = '/fetchBreeds ';
