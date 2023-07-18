@@ -1,7 +1,7 @@
 import axios from "axios";
 import notiflix from "notiflix";
 
-import loader from "css-loader";
+
 import {fetchBreeds} from './cat-api';
 import {fetchCatByBreed} from './cat-api';
   
@@ -18,13 +18,13 @@ const errorEl = document.querySelector('.error');
 loardEL.classList.replace('loadEl','is-hidden');
 errorEl.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
- let arrBreedsId=[];
+
  fetchBreeds()
  then.axios(data=> {
   arrBreedsId.push({Text:Element.name,value:Element.id});
   new SlimSelect({
     select: selectIn,
-    data:arrBreedsId
+   
   });
  })
 .catch(onFechError);
@@ -35,7 +35,16 @@ function onSelectBreed (event){
 selectIn.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 }
-
+function createMarkup(arr){
+  return arr.map(({
+    poster,catName,description
+  })=>
+  `<img src="https://api.thecatapi.com/v1/images/search${poster}" alt ="${catName}"/>
+  <h2>${description}
+  `)
+  .join('')
+  console.log(createMarkup)
+}
 const breedId = event.currentTarget.value;
 fetchCatByBreed(breedId)
 then.axios(data=>{
@@ -53,8 +62,5 @@ axios.defaults.baseURL='https://api.thecatapi.com/v1/breeds';
   console.log('error', error);
 }
 )
-function fetchBreeds(){
- 
-  }
-  
+
 
