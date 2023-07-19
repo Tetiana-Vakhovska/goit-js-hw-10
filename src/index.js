@@ -16,7 +16,7 @@ const errorEl = document.querySelector('.error');
  then.axios(data=> {
   arrBreedsId.push({Text:Element.name,value:Element.id});
   new SlimSelect({
-    select: selectIn,
+    select: selectIn
    
   });
  })
@@ -34,6 +34,8 @@ function onSelectBreed(){
       `<img src="${Element.url} alt="photo" width="500" hight="400"/>
       <h2>${Element.name}</h2>
       `)
+      .join('');
+
   })
   
 }
