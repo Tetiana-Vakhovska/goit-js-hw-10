@@ -1,6 +1,6 @@
 
 const options ={Headers:{
-    "x-api-key":`live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn`
+    "x-api-key":'live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn'
 }
 }
  export function fetchBreeds(){
