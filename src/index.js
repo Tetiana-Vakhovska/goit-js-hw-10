@@ -2,10 +2,10 @@ import axios from "axios";
 import Notiflix from "notiflix";
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import SlimSelect from 'slim-select';
+import './css/style.css';
 
 
-
-const selectIn = document.querySelector('.breed-select');
+const selectIn = document.querySelector('#breed-select');
 const catItem = document.querySelector('.cat-info');
 const loardEL= document.querySelector('.loard');
 const errorEl = document.querySelector('.error');
@@ -13,21 +13,19 @@ const errorEl = document.querySelector('.error');
 
 
  fetchBreeds()
- then.axios(data=> {
+ .then(data=> {
   arrBreedsId.push({Text:Element.name,value:Element.id});
-  new SlimSelect({
-    select: selectIn
-   
-  });
+ 
  })
-.catch(onFechError);
+.catch( errorEl );
+
 
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(){
   let breedId =Event.currentTarget.value;
   fetchCatByBreed(breedId)
-  then.axios(data=>{
+  .then(data=>{
     console.log(data);
     console.log(fetchCatByBreed);
     div.innerHTML=data.map(Element=>
