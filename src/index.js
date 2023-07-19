@@ -5,19 +5,17 @@ import SlimSelect from 'slim-select';
 import './css/style.css';
 
 
-const selectIn = document.querySelector('#breed-select');
+const selectIn = document.querySelector('.breed-select');
 const catItem = document.querySelector('.cat-info');
 const loardEL= document.querySelector('.loard');
 const errorEl = document.querySelector('.error');
 
 
 
- fetchBreeds()
- .then(data=> {
-  arrBreedsId.push({Text:Element.name,value:Element.id});
- 
- })
-.catch( errorEl );
+selectIn.onchange = function fetchBreeds() {
+    let item = selectIn.value;
+    console.log(item);
+}
 
 
 selectIn.addEventListener('change', onSelectBreed);
