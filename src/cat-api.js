@@ -14,7 +14,7 @@ const options ={Headers:{
     })
 }
 export function fetchCatByBreed(breedId){
-    return fetch('https://api.thecatapi.com/v1/breeds' , options)
+    return fetch('https://api.thecatapi.com/v1/images/search_ids={breed.id}' , options)
     .then( (Response)=>{
         if (!Response.ok){
             throw new Error(Response.statusText);
