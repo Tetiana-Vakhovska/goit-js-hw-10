@@ -1,8 +1,10 @@
-import axios from "axios";
-axios.defaults.headers.common['x-api-key']='live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn';
-axios.defaults.baseURL='https://api.thecatapi.com/v1/'
- export function fetchBreeds(){
-    return axios.get('./breeds/')
+
+const options= {headers:
+{ ["x-api-key"] : "live_7u1513J1pLH6k4dsxR0sDujpDXqykt0NqVRRGuZsbLcOTa3MmbJ082NYemF7E1jn"
+}}
+
+ export const fetchBreeds= function(){
+    return fetch(`https://api.thecatapi.com/v1/breeds`,options)
     .then( response=>{
         if (!response.ok){
             throw new error(response.statusText);
@@ -11,8 +13,8 @@ axios.defaults.baseURL='https://api.thecatapi.com/v1/'
         
     })
 }
-export function fetchCatByBreed(breedId){
-    return axios.get(`/images/search?breed_ids=${breedId}`)
+export const fetchCatByBreed = function fetchCatByBreed(breedId){
+    return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, options)
     .then( (response)=>{
         if (!response.ok){
             throw new error(response.statusText);
