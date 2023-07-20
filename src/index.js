@@ -26,7 +26,7 @@ function onSelectBreed(){
   .then(data=>{
     console.log(data);
     console.log(fetchCatByBreed);
-    div.innerHTML=data.map(Element=>
+   div.innerHTML=data.map(Element=>
       `<img src="${Element.url} alt="photo" width="500" hight="400"/>
       <h2>${Element.name}</h2>
       `)
