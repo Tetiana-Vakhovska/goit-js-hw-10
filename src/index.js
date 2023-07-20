@@ -7,7 +7,7 @@ import SlimSelect from 'slim-select';
 
 const selectIn = document.querySelector('.breed-select');
 const div = document.querySelector('.cat-info');
-const loardEL= document.querySelector('.loard');
+const loardEL= document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 
 
@@ -16,6 +16,9 @@ const errorEl = document.querySelector('.error');
 fetchBreeds()
 .then(data=>{
   selectIn.innerHTML=data.map(elem=>`<option value="${elem.id}">${elem.name}</option>`)
+  new SlimSelect({
+    select: '#selectElement',
+  })
   .join("");
 })
 .catch(()=>errorEl.removeAttribute('hidden'))
