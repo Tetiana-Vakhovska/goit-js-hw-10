@@ -4,7 +4,7 @@ const options ={headers:{
 }
 }
  export function fetchBreeds(){
-    return fetch('${key}', options)
+    return fetch(`${key}`, options)
     .then( response=>{
         if (!response.ok){
             throw new Error(response.statusText);
@@ -14,7 +14,7 @@ const options ={headers:{
     })
 }
 export function fetchCatByBreed(breedId){
-    return fetch('https://api.thecatapi.com/v1/images/search_ids=${breed.id}' , options)
+    return fetch(`https://api.thecatapi.com/v1/images/search_ids=${breed.id}` , options)
     .then( (response)=>{
         if (!response.ok){
             throw new Error(response.statusText);
