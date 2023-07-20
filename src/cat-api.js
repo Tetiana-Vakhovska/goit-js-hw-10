@@ -17,7 +17,7 @@ export const fetchCatByBreed = function fetchCatByBreed(breedId){
     return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, options)
     .then( (response)=>{
         if (!response.ok){
-            throw new error(response.statusText);
+            throw new error (response.statusText);
         }
         return response.json();
 
