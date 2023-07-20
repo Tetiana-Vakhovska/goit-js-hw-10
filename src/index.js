@@ -12,23 +12,24 @@ const errorEl = document.querySelector('.error');
 
 
 
-selectIn.onchange = function fetchBreeds() {
-    let item = selectIn.value;
-    console.log(item);
-}
-
+fetchBreeds().then(data=>{
+  selectIn.innerHTML=data.map(elem=>'<option value="${elem.id}">${elem.name}</option>')
+  .join("");
+})
+.catch(()=>loardEL.removeAttribute('hidden'))
+.finally(()=>errorEl.setAttribute('hidden',true))
 
 selectIn.addEventListener('change', onSelectBreed);
 
-function onSelectBreed(){
-  let breedId =Event.currentTarget.value;
+function onSelectBreed(event){
+  let breedId =event.currentTarget.value;
   fetchCatByBreed(breedId)
   .then(data=>{
     console.log(data);
     console.log(fetchCatByBreed);
-   div.innerHTML=data.map(Element=>
-      `<img src="${Element.url} alt="photo" width="500" hight="400"/>
-      <h2>${Element.name}</h2>
+   div.innerHTML=data.map(element=>
+      `<img src="${element.url} alt="photo" width="500" hight="400"/>
+      <h2>${element.name}</h2>
       `)
       .join('');
 
