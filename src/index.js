@@ -18,9 +18,9 @@ fetchBreeds()
 
   .join("");
 })
-
+.catch(()=>errorEl.removeAttribute("hidden"))
 .finally(()=>loardEL.setAttribute("hidden",true))
-.catch(()=>errorEl.removeAttribute('hidden'))
+
 
 selectIn.addEventListener('change', onSelectBreed);
 
