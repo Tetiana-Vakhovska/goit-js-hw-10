@@ -21,14 +21,15 @@ fetchBreeds()
 
   .join("");
 })
-.catch(()=>errorEl.removeAttribute("hidden"))
-.finally(()=>loardEL.setAttribute("hidden",true))
+errorEl.setAttribute("hidden",true)
+loardEL.setAttribute("hidden",true)
 
 
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
   loardEL.removeAttribute("hidden")
+ 
   let breedId =event.target.value;
   fetchCatByBreed(breedId)
   .then(data=>{
