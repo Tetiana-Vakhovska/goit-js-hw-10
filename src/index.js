@@ -1,6 +1,6 @@
 
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
-import Notiflix from "notiflix";
+import Notiflix, { Notify } from "notiflix";
   
 
 
@@ -53,10 +53,14 @@ function onSelectBreed(event){
         });
       })
   })
-  .catch(()=>{errorEl.removeAttribute('hideen')
-  })
+  .catch(errorFail)
+  
   .finally(()=>loardEL.setAttribute("hidden",true))
 }
 
-
+function errorFail (){
+  selectIn.removeAttribute('hidden',true);
+  loardEL.removeAttribute('hidden', true)
+  Notify.failure(errorEl.textContent)
+}
 
