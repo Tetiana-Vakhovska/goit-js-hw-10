@@ -62,6 +62,6 @@ function onSelectBreed(event){
 
 function errorFail (){
   
-  if (div=""){ Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+  if (markup= "") Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')
 }
 
