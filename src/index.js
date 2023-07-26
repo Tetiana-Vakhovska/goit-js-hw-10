@@ -2,6 +2,7 @@
 import { resolve } from 'url';
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix, { Notify } from "notiflix";
+import { info } from 'console';
   
 
 
@@ -60,8 +61,7 @@ function onSelectBreed(event){
 }
 
 function errorFail (){
-  selectIn.removeAttribute('hidden',true);
-  loardEL.removeAttribute('hidden', true)
-  if (response.statusText){Notiflix.Notify.failure(errorEl.textContent)}
+  
+  if (div=""){ Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
 }
 
