@@ -1,4 +1,5 @@
 
+import { resolve } from 'url';
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix, { Notify } from "notiflix";
   
@@ -61,6 +62,6 @@ function onSelectBreed(event){
 function errorFail (){
   selectIn.removeAttribute('hidden',true);
   loardEL.removeAttribute('hidden', true)
-  Notify.failure(errorEl.textContent)
+  if (response.statusText){Notiflix.Notify.failure(errorEl.textContent)}
 }
 
