@@ -2,7 +2,7 @@
 import { resolve } from 'url';
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix, { Notify } from "notiflix";
-import { info } from 'console';
+
   
 
 
