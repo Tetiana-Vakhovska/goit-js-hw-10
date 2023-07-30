@@ -19,6 +19,9 @@ const errorEl = document.querySelector('.error');
 
 fetchBreeds()
 .then(data=>{
+  if (data.length === 0) 
+  {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+  else
   selectIn.innerHTML=data.map(elem=>`<option value="${elem.id}">${elem.name}</option>`)
 
   .join("");
@@ -60,8 +63,9 @@ function onSelectBreed(event){
   .finally(()=>loardEL.setAttribute("hidden",true))
 }
 
-function errorFail (){
-  
-  if (markup= "") Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')
+function errorFail (error){
+  console.log(error)
+  if (array.length === 0) 
+  {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
 }
 
