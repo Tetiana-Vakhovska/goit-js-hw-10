@@ -1,7 +1,8 @@
 
-import { resolve } from 'url';
+
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
-import Notiflix, { Notify } from "notiflix";
+import Notiflix from 'notiflix';
+
 
   
 
@@ -19,13 +20,12 @@ const errorEl = document.querySelector('.error');
 
 fetchBreeds()
 .then(data=>{
-  if (data.length === 0) 
-  {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
-  else
+  
   selectIn.innerHTML=data.map(elem=>`<option value="${elem.id}">${elem.name}</option>`)
 
   .join("");
 })
+
 errorEl.setAttribute("hidden",true)
 loardEL.setAttribute("hidden",true)
 
@@ -57,6 +57,9 @@ function onSelectBreed(event){
         div.insertAdjacentHTML("beforeend", markup)
         });
       })
+      if (data.length === 0) 
+      {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+      
   })
   .catch(errorFail)
   
