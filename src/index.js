@@ -7,17 +7,6 @@ import Notiflix from 'notiflix';
   
 
 
-
-
-
-const selectIn = document.querySelector('.breed-select');
-const div = document.querySelector('.cat-info');
-const loardEL= document.querySelector('.loader');
-const errorEl = document.querySelector('.error');
-
-
-
-
 fetchBreeds()
 .then(data=>{
   
@@ -72,4 +61,3 @@ function errorFail (error){
   if (array.length === 0) 
   {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
 }
-
