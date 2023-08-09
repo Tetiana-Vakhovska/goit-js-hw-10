@@ -1,5 +1,6 @@
 
 
+import { connected } from 'process';
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix from 'notiflix';
 
@@ -46,7 +47,7 @@ function onSelectBreed(event){
         div.insertAdjacentHTML("beforeend", markup)
         });
       })
-      if (data.length === 0 ) 
+      if (data.length === 0 || navigator.onLine===false) 
       {div.setAttribute("hidden",true)
         Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       
