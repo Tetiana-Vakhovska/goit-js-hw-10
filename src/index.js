@@ -19,9 +19,6 @@ fetchBreeds()
 }
 )
 
-.finally(
-  loardEL.setAttribute("hidden",true)
-  )
 
 
 
