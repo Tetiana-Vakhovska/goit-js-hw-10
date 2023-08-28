@@ -54,7 +54,10 @@ function onSelectBreed(event){
       if (data.length === 0) 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       })
+      .catch(errorFail)
+      .finally(()=>loardEL.setAttribute("hidden",true))
     }
+    
    
 
 function errorFail (error){
