@@ -32,10 +32,7 @@ function onSelectBreed(event){
   .then(data=>{
     console.log(data);
     console.log(fetchCatByBreed);
-    if (navigator.onLine===false)
-    {div.setAttribute("hidden",true)
-        Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
-        else
+   
    div.innerHTML=data.map(element=>
       `<img src="${element.url}" alt="cat" width="500" hight="400"/>
       `)
@@ -54,14 +51,11 @@ function onSelectBreed(event){
         });
       })
       if (data.length === 0) 
-      {div.setAttribute("hidden",true)
-        Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+      {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       
-  })
-  .catch(errorFail)
+
   
-  .finally(()=>loardEL.setAttribute("hidden",true))
-}
+})}
 
 function errorFail (error){
   console.log(error)
