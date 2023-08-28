@@ -18,14 +18,13 @@ fetchBreeds()
   .join("");
 })
 
-errorEl.setAttribute("hidden",true)
-loardEL.setAttribute("hidden",true)
+
 
 
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
-  loardEL.removeAttribute("hidden")
+ 
  
   let breedId =event.target.value;
   fetchCatByBreed(breedId)
