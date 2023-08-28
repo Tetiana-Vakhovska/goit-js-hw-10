@@ -17,7 +17,12 @@ fetchBreeds()
 
   .join("");
 }
+
 )
+.finally(
+  loardEL.setAttribute("hidden",true)
+  )
+
 
 
 selectIn.addEventListener('change', onSelectBreed);
