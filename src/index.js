@@ -1,4 +1,4 @@
-import { connected } from 'process';
+
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix from 'notiflix';
 
@@ -52,8 +52,6 @@ function onSelectBreed(event){
       })
       if (data.length === 0) 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
-      
-
   
 })}
 
