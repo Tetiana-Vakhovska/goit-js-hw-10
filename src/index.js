@@ -1,6 +1,4 @@
 
-
-import { connected } from 'process';
 import {fetchBreeds, fetchCatByBreed} from './cat-api';
 import Notiflix from 'notiflix';
 
