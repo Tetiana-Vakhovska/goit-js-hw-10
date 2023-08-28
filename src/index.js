@@ -18,8 +18,7 @@ fetchBreeds()
   .join("");
 })
 
-errorEl.setAttribute("hidden",true)
-loardEL.setAttribute("hidden",true)
+
 
 
 selectIn.addEventListener('change', onSelectBreed);
@@ -52,7 +51,7 @@ function onSelectBreed(event){
       })
     })
    
-
+  }
 function errorFail (error){
   console.log(error)
   if (array.length === 0) 
