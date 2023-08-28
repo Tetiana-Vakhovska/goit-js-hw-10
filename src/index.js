@@ -28,7 +28,7 @@ fetchBreeds()
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
-  loardEL.setAttribute("hidden",true)
+  
  
   let breedId =event.target.value;
   fetchCatByBreed(breedId)
