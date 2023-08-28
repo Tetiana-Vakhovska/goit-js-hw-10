@@ -18,7 +18,8 @@ fetchBreeds()
   .join("");
 })
 
-
+errorEl.setAttribute("hidden",true)
+loardEL.setAttribute("hidden",true)
 
 
 selectIn.addEventListener('change', onSelectBreed);
@@ -48,10 +49,14 @@ function onSelectBreed(event){
         </div> `
         div.insertAdjacentHTML("beforeend", markup)
         });
+       
       })
-    })
+      if (data.length === 0) 
+      {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+      })
+    }
    
-  }
+
 function errorFail (error){
   console.log(error)
   if (array.length === 0) 
