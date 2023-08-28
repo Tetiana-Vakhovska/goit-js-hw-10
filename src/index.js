@@ -19,6 +19,8 @@ fetchBreeds()
 })
 
 
+errorEl.setAttribute("hidden",true)
+loardEL.setAttribute("hidden",true)
 
 
 selectIn.addEventListener('change', onSelectBreed);
