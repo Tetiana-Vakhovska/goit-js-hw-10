@@ -7,7 +7,7 @@ import Notiflix from 'notiflix';
 
 const selectIn = document.querySelector('.breed-select');
 const div = document.querySelector('.cat-info');
-const loardEL= document.querySelector('.loard');
+const loardEL= document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 
 fetchBreeds()
@@ -19,10 +19,6 @@ fetchBreeds()
 }
 
 )
-.finally(
-  loardEL.setAttribute("hidden",true)
-  )
-
 
 
 selectIn.addEventListener('change', onSelectBreed);
@@ -58,7 +54,9 @@ function onSelectBreed(event){
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       })
       .catch(errorFail)
-      .finally(()=>loardEL.setAttribute("hidden",true))
+      .finally(()=>loardEL.setAttribute("hidden",true),
+      errorEl.setAttribute("hidden",true)
+      )
     }
     
    
