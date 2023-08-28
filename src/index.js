@@ -50,7 +50,7 @@ function onSelectBreed(event){
         });
        
       })
-      if (data.length === 0) 
+      if (data.length === 0|| data.length==="") 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       })
       .catch(errorFail)
