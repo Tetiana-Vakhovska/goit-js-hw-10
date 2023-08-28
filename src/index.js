@@ -5,6 +5,10 @@ import Notiflix from 'notiflix';
 
   
 
+const selectIn = document.querySelector('.breed-select');
+const div = document.querySelector('.cat-info');
+const loardEL= document.querySelector('.loard');
+const errorEl = document.querySelector('.error');
 
 fetchBreeds()
 .then(data=>{
@@ -14,7 +18,8 @@ fetchBreeds()
   .join("");
 })
 
-
+errorEl.setAttribute("hidden",true)
+loardEL.setAttribute("hidden",true)
 
 
 selectIn.addEventListener('change', onSelectBreed);
