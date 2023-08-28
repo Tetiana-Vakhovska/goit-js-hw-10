@@ -20,9 +20,6 @@ fetchBreeds()
 )
 
 
-
-
-
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
