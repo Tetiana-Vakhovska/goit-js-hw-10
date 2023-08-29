@@ -24,7 +24,9 @@ fetchBreeds()
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
- 
+ if (array===undefined) 
+ {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+
  
   let breedId =event.target.value;
   fetchCatByBreed(breedId)
@@ -57,7 +59,7 @@ function onSelectBreed(event){
       .finally(()=>loardEL.setAttribute("hidden",true),
       errorEl.setAttribute("hidden",true)
       )
-      if (data.length===""|| array===undefined)
+      if (data.length==="")
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
     }
     
