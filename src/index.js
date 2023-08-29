@@ -49,8 +49,7 @@ function onSelectBreed(event){
         </div> `
         div.insertAdjacentHTML("beforeend", markup)
         });
-        if (array===undefined) 
- {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+      
       })
       if (data.length === 0) 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
@@ -60,6 +59,8 @@ function onSelectBreed(event){
       errorEl.setAttribute("hidden",true)
       )
       if (data.length==="")
+      {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+      if (array===undefined) 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
     }
     
