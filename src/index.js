@@ -24,8 +24,7 @@ fetchBreeds()
 selectIn.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event){
- if (array===undefined) 
- {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
+
 
  
   let breedId =event.target.value;
@@ -50,7 +49,8 @@ function onSelectBreed(event){
         </div> `
         div.insertAdjacentHTML("beforeend", markup)
         });
-       
+        if (array===undefined) 
+ {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
       })
       if (data.length === 0) 
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
