@@ -57,7 +57,7 @@ function onSelectBreed(event){
       .finally(()=>loardEL.setAttribute("hidden",true),
       errorEl.setAttribute("hidden",true)
       )
-      if (data.length==="")
+      if (data.length===""|| window.navigator.onLine===false)
       {Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!')}
     }
     
